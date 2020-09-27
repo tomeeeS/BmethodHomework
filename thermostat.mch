@@ -29,94 +29,104 @@ PROPERTIES
     TEMPS_CAPACITY : INT & TEMPS_CAPACITY = 100
     
 VARIABLES
-    temps,   // a mereseket tarolo parcialis fuggveny
-    minTemp, // a legkisebb eltarolt homerseklet
-    maxTemp, // a legnagyobb eltarolt homerseklet
-    avgTemp, // az eltarolt homersekletek atlaga
-    nextIndex // az az ertelmezesi helye a temps fuggvenynek, ahova 
-              // a kovetkezo beolvasott meresi eredmeny kerulne
-INVARIANT
-    temps : DOM_TEMPS +-> TEMP & // a mereseket tarolo parcialis fuggveny tipusa
-    minTemp : TEMP & // a legkisebb eltarolt homerseklet tipusa
-    maxTemp : TEMP & // a legnagyobb eltarolt homerseklet tipusa
-    avgTemp : TEMP & // az eltarolt homersekletek atlaganak tipusa
-    nextIndex : DOM_TEMPS & // a kovetkezo beolvasott meresi eredmeny helyenek tipusa
-    // valtozok tipusainak megadasanak vege
+    temps,   // a méréseket tároló parciális függvény
+    nextIndex, // az az értelmezési helye a temps függvénynek, ahova 
+               // a következő beolvasott mérési eredmény kerülne
+    minTemp, // a legkisebb eltárolt hőmérséklet
+    maxTemp, // a legnagyobb eltárolt hőmérséklet
+    avgTemp, // az eltárolt hőmérsékletek átlaga
 
-    (temps /= {} => // ha van eltarolt meresunk:
-        minTemp = min(ran(temps)) & // akkor a minTemp erteke a homersekletek minimuma
-        maxTemp = max(ran(temps)) & // akkor a maxTemp erteke a homersekletek maximuma
-        avgTemp = (SIGMA(xx).(xx : dom(temps) | temps(xx))) / card(temps) // akkor az avgTemp erteke a homersekletek atlaga
-    )
+    isMinComputed, // ki van-e épp számolva a minTemp érték (invariánshoz kell)
+    isMaxComputed, // ki van-e épp számolva a maxTemp érték (invariánshoz kell)
+    isAvgComputed  // ki van-e épp számolva a avgTemp érték (invariánshoz kell)
+
+INVARIANT
+    temps : DOM_TEMPS +-> TEMP & // TEMP értékű parciális függvényben tároljuk a méréseket
+    nextIndex : DOM_TEMPS & 
+    
+    minTemp : TEMP & 
+    maxTemp : TEMP & 
+    avgTemp : TEMP & 
+
+    isMinComputed : BOOL & 
+    isMaxComputed : BOOL & 
+    isAvgComputed : BOOL & 
+    // változók típusainak megadásának vége
+
+    (temps = {} => 
+        isMinComputed = FALSE &
+        isMaxComputed = FALSE &
+        isAvgComputed = FALSE
+    ) &
+    (isMinComputed = TRUE => minTemp = min(ran(temps))) &
+    (isMaxComputed = TRUE => maxTemp = max(ran(temps))) &
+    (isAvgComputed = TRUE => avgTemp = (SIGMA(xx).(xx : dom(temps) | temps(xx))) / card(temps))
     
 INITIALISATION  
-       temps   := {} // ures a fuggveny kezdetben
-    || minTemp :: TEMP // tetszoleges homerseklet lehet
-    || maxTemp :: TEMP // tetszoleges homerseklet lehet
-    || avgTemp :: TEMP // tetszoleges homerseklet lehet
-    || nextIndex := DOM_MIN // az ertelmezesi tartomany elejen kezdjuk feltolteni a fuggvenyt a homersekletekkel
+    temps   := {} ||
+    nextIndex := DOM_MIN ||
+
+    minTemp :: TEMP  ||
+    maxTemp :: TEMP ||
+    avgTemp :: TEMP ||
+
+    isMinComputed := FALSE ||
+    isMaxComputed := FALSE ||
+    isAvgComputed := FALSE
     
 OPERATIONS
     
-    // a kovetkezo homerseklet hozzaadasa, ekkor rogton ki is szamitjuk a minimumot, maximumot es az atlagot is.
     addTemp(newTemp) = 
     PRE
         newTemp : TEMP &
-        
-        // trivialis (abbol, hogy a fuggveny ertelmezesi tartomanya es ertekkeszlete is zart intervallumok), de kell minTemp helyes beallitasanak bizonyitasahoz: 
-        ran(temps<+{nextIndex|->newTemp})/\INTEGER-NATURAL: FIN(INTEGER) & // van minimuma a halmaznak
-        
-        // trivialis, de kell maxTemp helyes beallitasanak bizonyitasahoz:
-        ran(temps <+ {nextIndex |-> newTemp})/\NATURAL: FIN(NATURAL) & // van maximuma a halmaznak
-        
-        // trivialis, de kell avgTemp helyes beallitasanak bizonyitasahoz:
-        temps<+{nextIndex|->newTemp}: FIN(temps <+ {nextIndex |-> newTemp}) // veges halmazt osszegezzunk az atlag szamitashoz
-        
+        (nextIndex mod TEMPS_CAPACITY) + 1 : DOM_TEMPS
     THEN
-        nextIndex := (nextIndex mod TEMPS_CAPACITY) + 1 // <mod TEMPS_CAPACITY>: az index ahova a kovetkezo meresi erteket beszurjuk maradjon az ertelmezesi tartomanyban.
-        || temps(nextIndex) := newTemp // uj meresi eredmeny eltarolasa
-        || minTemp :(
-            minTemp : TEMP & // trivialitas az alabbibol, de a bizonyitonak kell
-            minTemp = min(ran(temps <+ {nextIndex |-> newTemp})) // legyen a minimuma az eddigi mereseknek es a most berakott elemnek
-        )
-        || maxTemp :(
-            maxTemp : TEMP & // trivialitas az alabbibol, de a bizonyitonak kell
-            maxTemp = max(ran(temps <+ {nextIndex |-> newTemp}))
-        )
-        || avgTemp :(
-            avgTemp : TEMP & // a bizonyitonak kell
-            avgTemp = SIGMA(xx).(xx:dom(temps <+ {nextIndex |-> newTemp}) | (temps <+ {nextIndex |-> newTemp})(xx)) / card(temps <+ {nextIndex |-> newTemp}) // atlagszamitas, egeszosztassal
-        ) 
+        nextIndex := (nextIndex mod TEMPS_CAPACITY) + 1 || // <mod TEMPS_CAPACITY>: az index ahova a következő mérési értéket beszúrjuk maradjon az értelmezési tartományban.
+        temps(nextIndex) := newTemp ||
+        isMinComputed := FALSE ||
+        isMaxComputed := FALSE ||
+        isAvgComputed := FALSE
     END;
     
-    ret <-- getMinTemp = // legkisebb ertek lekerese
+    ret <-- getMinTemp =
     PRE
         temps /= {}
     THEN
-       ret := minTemp
-    END;
+        isMinComputed := TRUE ||
+        minTemp := min(ran(temps)) ||
+        ret := min(ran(temps))
+    END; 
     
-    ret <-- getMaxTemp = // legnagyobb ertek lekerese
+    ret <-- getMaxTemp =
     PRE
         temps /= {}
     THEN
-       ret := maxTemp
+        isMaxComputed := TRUE ||
+        maxTemp := max(ran(temps)) ||
+        ret := max(ran(temps))
     END;
     
-    ret <-- getAvgTemp = // ertekek atlaganak lekerese
+    ret <-- getAvgTemp =
     PRE
         temps /= {}
     THEN
-       ret := avgTemp
+        isAvgComputed := TRUE ||
+        avgTemp := SIGMA(xx).(xx : dom(temps) | (temps)(xx)) / card(temps) || // átlagszámítás, egész-osztással
+        ret := SIGMA(xx).(xx : dom(temps) | (temps)(xx)) / card(temps)
     END;
     
-    init = // ha kell, ujra tudjuk inditani a gepet
+    init =
     BEGIN  
-        temps := {}
-        || minTemp :: TEMP 
-        || maxTemp :: TEMP
-        || avgTemp :: TEMP
-        || nextIndex := DOM_MIN
+        temps   := {} ||
+        nextIndex := DOM_MIN ||
+    
+        minTemp :: TEMP  ||
+        maxTemp :: TEMP ||
+        avgTemp :: TEMP ||
+    
+        isMinComputed := FALSE ||
+        isMaxComputed := FALSE ||
+        isAvgComputed := FALSE
     END    
 
 END

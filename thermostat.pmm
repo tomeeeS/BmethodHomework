@@ -1,0 +1,4 @@
+﻿THEORY User_Pass IS
+Pattern(nextIndex mod TEMPS_CAPACITY+1 : 1..TEMPS_CAPACITY) 
+	& ff(0) & pr & ar(b1.59,Once) & ar(b1.60,Once)
+END 

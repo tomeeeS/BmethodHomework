@@ -1,0 +1,3644 @@
+<Proof_Obligations>
+<Define merge="=" name="B definitions">
+<Nary_Pred op="&amp;">
+<Exp_Comparison op="=">
+<Id value="NAT"/>
+<Binary_Exp op="..">
+<Integer_Literal value="0"/>
+<Id value="MAXINT"/>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Id value="INT"/>
+<Binary_Exp op="..">
+<Id value="MININT"/>
+<Id value="MAXINT"/>
+</Binary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Define>
+<Define merge="=" name="ctx"/>
+<Define merge="=" name="seext"/>
+<Define merge="-" name="lprp"/>
+<Define merge="=" name="inprp"/>
+<Define merge="=" name="inext"/>
+<Define merge="-" name="inv">
+<Attr>
+<Pos s="9" c="1" l="41"/>
+</Attr>
+<Nary_Pred op="&amp;">
+<Exp_Comparison op=":" initialTag="((temps) : (((((1) .. (100))) +-> (((-50) .. (120))))))">
+<Attr>
+<Pos s="1" c="11" l="42"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="5" l="42"/>
+</Attr>
+</Id>
+<Binary_Exp op="+->" typref="3083833907">
+<Attr>
+<Pos s="3" c="23" l="42"/>
+</Attr>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":" initialTag="((nextIndex) : (((1) .. (100))))">
+<Attr>
+<Pos s="1" c="15" l="43"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:1" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="5" l="43"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":" initialTag="((minTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="45"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="5" l="45"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":" initialTag="((maxTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="46"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="5" l="46"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":" initialTag="((avgTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="47"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:1" typref="2701647786" value="avgTemp">
+<Attr>
+<Pos s="7" c="5" l="47"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":" initialTag="((isMinComputed) : (BOOL))">
+<Attr>
+<Pos s="1" c="19" l="49"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:6:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="5" l="49"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:6:2" typref="4282494527" value="BOOL">
+<Attr>
+<Pos s="4" c="21" l="49"/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=":" initialTag="((isMaxComputed) : (BOOL))">
+<Attr>
+<Pos s="1" c="19" l="50"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:7:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="5" l="50"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:7:2" typref="4282494527" value="BOOL">
+<Attr>
+<Pos s="4" c="21" l="50"/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=":" initialTag="((isAvgComputed) : (BOOL))">
+<Attr>
+<Pos s="1" c="19" l="51"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:8:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="5" l="51"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:8:2" typref="4282494527" value="BOOL">
+<Attr>
+<Pos s="4" c="21" l="51"/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Binary_Pred op="=>" initialTag="((((temps) = ({}))) => (((isMinComputed) = (FALSE)) &amp; ((isMaxComputed) = (FALSE)) &amp; ((isAvgComputed) = (FALSE))))">
+<Attr>
+<Pos s="2" c="17" l="54"/>
+</Attr>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="6" l="54"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="55"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="9" l="55"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="55"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="56"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="9" l="56"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="56"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="57"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="9" l="57"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="57"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Binary_Pred>
+<Binary_Pred op="=>" initialTag="((((isMinComputed) = (TRUE))) => (((minTemp) = (min(ran(temps))))))">
+<Attr>
+<Pos s="2" c="27" l="59"/>
+</Attr>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="6" l="59"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="59"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="38" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:2:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="30" l="59"/>
+</Attr>
+</Id>
+<Unary_Exp op="min" typref="2701647786">
+<Attr>
+<Pos s="3" c="40" l="59"/>
+</Attr>
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="59"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Unary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+<Binary_Pred op="=>" initialTag="((((isMaxComputed) = (TRUE))) => (((maxTemp) = (max(ran(temps))))))">
+<Attr>
+<Pos s="2" c="27" l="60"/>
+</Attr>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="6" l="60"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="60"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="38" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:2:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="30" l="60"/>
+</Attr>
+</Id>
+<Unary_Exp op="max" typref="2701647786">
+<Attr>
+<Pos s="3" c="40" l="60"/>
+</Attr>
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="60"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Unary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+<Binary_Pred op="=>" initialTag="((((isAvgComputed) = (TRUE))) => (((avgTemp) = ((SIGMA(xx).(((xx) : (dom(temps))) | (temps )(xx)) / card(temps))))))">
+<Attr>
+<Pos s="2" c="27" l="61"/>
+</Attr>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="6" l="61"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="61"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="38" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:1" typref="2701647786" value="avgTemp">
+<Attr>
+<Pos s="7" c="30" l="61"/>
+</Attr>
+</Id>
+<Binary_Exp op="/" typref="2701647786">
+<Attr>
+<Pos s="1" c="82" l="61"/>
+</Attr>
+<Quantified_Exp type="SIGMA" typref="2701647786">
+<Attr>
+<Pos s="1" c="50" l="61"/>
+</Attr>
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="47" l="61"/>
+</Attr>
+</Id>
+</Variables>
+<Pred>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="55" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="52" l="61"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="57" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="61" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Pred>
+<Body>
+<Binary_Exp op="(" typref="2701647786">
+<Attr>
+<Pos s="0" c="75" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="70" l="61"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:3:1:2" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="76" l="61"/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Body>
+</Quantified_Exp>
+<Unary_Exp op="card" typref="2701647786">
+<Attr>
+<Pos s="4" c="84" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="89" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Nary_Pred>
+</Define>
+<Define merge="=" name="ass"/>
+<Define merge="=" name="cst"/>
+<Proof_Obligation>
+<Comment>Initialisation dans une machine abstraite</Comment>
+<Tag>Initialisation</Tag>
+<Tag>Invariant</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Local_Hyp num="1">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:1:1:1" typref="103245008">
+<Attr>
+<Pos s="5" c="5" l="64"/>
+</Attr>
+</EmptySet>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="59"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:6:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:6:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="5" l="71"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="59"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="60"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:7:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:7:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="5" l="72"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="60"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="4">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="61"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:8:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:8:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="5" l="73"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="61"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="5">
+<Nary_Pred op="&amp;"/>
+</Local_Hyp>
+<Local_Hyp num="6">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:1:1" typref="2701647786" value="avgTemp">
+<Attr>
+<Pos s="7" c="5" l="69"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="16" l="69"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="16" l="69"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="16" l="69"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="7">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:1:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="5" l="68"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="16" l="68"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="16" l="68"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="16" l="68"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="8">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:1:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="5" l="67"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="16" l="67"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="16" l="67"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="16" l="67"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="8"/>
+<Ref_Hyp num="7"/>
+<Ref_Hyp num="6"/>
+<Ref_Hyp num="5"/>
+</Nary_Pred>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((temps) : (((((1) .. (100))) +-> (((-50) .. (120))))))">
+<Attr>
+<Pos s="1" c="11" l="42"/>
+</Attr>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:1:1:1" typref="103245008">
+<Attr>
+<Pos s="5" c="5" l="64"/>
+</Attr>
+</EmptySet>
+<Binary_Exp op="+->" typref="3083833907">
+<Attr>
+<Pos s="3" c="23" l="42"/>
+</Attr>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="8"/>
+<Ref_Hyp num="7"/>
+<Ref_Hyp num="6"/>
+<Ref_Hyp num="5"/>
+</Nary_Pred>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((nextIndex) : (((1) .. (100))))">
+<Attr>
+<Pos s="1" c="15" l="43"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:2:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:2:1:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="9" c="5" l="65"/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>addTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Nary_Pred op="&amp;">
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="17" l="79"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:1" typref="2701647786" value="newTemp">
+<Attr>
+<Pos s="7" c="9" l="79"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="44" l="80"/>
+</Attr>
+<Binary_Exp op="+" typref="2701647786">
+<Attr>
+<Pos s="1" c="40" l="80"/>
+</Attr>
+<Binary_Exp op="mod" typref="2701647786">
+<Attr>
+<Pos s="3" c="20" l="80"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:1:1" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="10" l="80"/>
+</Attr>
+</Id>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="14" c="24" l="80"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:2" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="42" l="80"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="46" l="80"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:2:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="46" l="80"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:2:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="46" l="80"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Hypothesis>
+<Local_Hyp num="1">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<Binary_Exp tag=",/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:1:1:1" op="&lt;+" typref="103245008">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="83"/>
+</Attr>
+</Id>
+<Nary_Exp op="{">
+<Binary_Exp op="|->">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:1:1:2" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="15" l="83"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:2:1" typref="2701647786" value="newTemp">
+<Attr>
+<Pos s="7" c="29" l="83"/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Nary_Exp>
+</Binary_Exp>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="59"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:3:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:3:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="9" l="84"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="59"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="60"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:4:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:4:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="9" l="85"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="60"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="4">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="61"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:5:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:5:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="9" l="86"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="61"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="5">
+<Nary_Pred op="&amp;"/>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Ref_Hyp num="5"/>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((temps) : (((((1) .. (100))) +-> (((-50) .. (120))))))">
+<Attr>
+<Pos s="1" c="11" l="42"/>
+</Attr>
+<Binary_Exp tag=",/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:1:1:1" op="&lt;+" typref="103245008">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="83"/>
+</Attr>
+</Id>
+<Nary_Exp op="{">
+<Binary_Exp op="|->">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:1:1:2" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="15" l="83"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:2:2:1" typref="2701647786" value="newTemp">
+<Attr>
+<Pos s="7" c="29" l="83"/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Nary_Exp>
+</Binary_Exp>
+<Binary_Exp op="+->" typref="3083833907">
+<Attr>
+<Pos s="3" c="23" l="42"/>
+</Attr>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>getMinTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Exp_Comparison op="/=">
+<Attr>
+<Pos s="2" c="15" l="91"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="91"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:2:1:2" typref="103245008">
+<Attr>
+<Pos s="2" c="18" l="91"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Hypothesis>
+<Local_Hyp num="1">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="6" l="54"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="59"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:1:1:1" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="13" c="9" l="93"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="59"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Nary_Pred op="&amp;"/>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Ref_Hyp num="3"/>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((minTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="45"/>
+</Attr>
+<Unary_Exp tag=",/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:2:1:1" op="min" typref="2701647786">
+<Attr>
+<Pos s="7" c="9" l="94"/>
+</Attr>
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="24" l="94"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:2:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="28" l="94"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Unary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="55"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:1:1:1" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="13" c="9" l="93"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="55"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="56"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="9" l="56"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="56"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="57"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="9" l="57"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="57"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>getMaxTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Exp_Comparison op="/=">
+<Attr>
+<Pos s="2" c="15" l="100"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="100"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:2:1:2" typref="103245008">
+<Attr>
+<Pos s="2" c="18" l="100"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Hypothesis>
+<Local_Hyp num="1">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="6" l="54"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="60"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:1:1:1" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="13" c="9" l="102"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="60"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Nary_Pred op="&amp;"/>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Ref_Hyp num="3"/>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((maxTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="46"/>
+</Attr>
+<Unary_Exp tag=",/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:2:1:1" op="max" typref="2701647786">
+<Attr>
+<Pos s="7" c="9" l="103"/>
+</Attr>
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="24" l="103"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:2:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="28" l="103"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Unary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="55"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="9" l="55"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="55"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="56"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:1:1:1" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="13" c="9" l="102"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="56"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="57"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="9" l="57"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="57"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>getAvgTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Exp_Comparison op="/=">
+<Attr>
+<Pos s="2" c="15" l="109"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="109"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:2:1:2" typref="103245008">
+<Attr>
+<Pos s="2" c="18" l="109"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Hypothesis>
+<Local_Hyp num="1">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="6" l="54"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="61"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:1:1:1" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="13" c="9" l="111"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="61"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Nary_Pred op="&amp;"/>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Ref_Hyp num="3"/>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((avgTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="47"/>
+</Attr>
+<Binary_Exp tag=",/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:1:1" op="/" typref="2701647786">
+<Attr>
+<Pos s="7" c="9" l="112"/>
+</Attr>
+<Quantified_Exp type="SIGMA" typref="2701647786">
+<Attr>
+<Pos s="1" c="29" l="112"/>
+</Attr>
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="26" l="112"/>
+</Attr>
+</Id>
+</Variables>
+<Pred>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="34" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="31" l="112"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="36" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="40" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Pred>
+<Body>
+<Binary_Exp op="(" typref="2701647786">
+<Attr>
+<Pos s="0" c="56" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="50" l="112"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:3:1:2" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="57" l="112"/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Body>
+</Quantified_Exp>
+<Unary_Exp op="card" typref="2701647786">
+<Attr>
+<Pos s="4" c="64" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="69" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0; 1; 2; 3)" methodList="?"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="55"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="9" l="55"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="55"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="56"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="9" l="56"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="56"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="3"/>
+<Ref_Hyp num="1"/>
+</Nary_Pred>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="57"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:1:1:1" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="13" c="9" l="111"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="57"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>init</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis/>
+<Local_Hyp num="1">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:1:1:1" typref="103245008">
+<Attr>
+<Pos s="5" c="9" l="118"/>
+</Attr>
+</EmptySet>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="59"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:6:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:6:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="9" l="125"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="59"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="60"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:7:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:7:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="9" l="126"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="60"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="4">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="61"/>
+</Attr>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:8:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:8:1:1" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="13" c="9" l="127"/>
+</Attr>
+</Boolean_Literal>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="61"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="5">
+<Nary_Pred op="&amp;"/>
+</Local_Hyp>
+<Local_Hyp num="6">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:1:1" typref="2701647786" value="avgTemp">
+<Attr>
+<Pos s="7" c="9" l="123"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="20" l="123"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="20" l="123"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="20" l="123"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="7">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:1:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="9" l="122"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="20" l="122"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="20" l="122"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="20" l="122"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="8">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:1:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="9" l="121"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="20" l="121"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="20" l="121"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="20" l="121"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="8"/>
+<Ref_Hyp num="7"/>
+<Ref_Hyp num="6"/>
+<Ref_Hyp num="5"/>
+</Nary_Pred>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((temps) : (((((1) .. (100))) +-> (((-50) .. (120))))))">
+<Attr>
+<Pos s="1" c="11" l="42"/>
+</Attr>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:1:1:1" typref="103245008">
+<Attr>
+<Pos s="5" c="9" l="118"/>
+</Attr>
+</EmptySet>
+<Binary_Exp op="+->" typref="3083833907">
+<Attr>
+<Pos s="3" c="23" l="42"/>
+</Attr>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Invariant is preserved</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Nary_Pred op="&amp;">
+<Ref_Hyp num="8"/>
+<Ref_Hyp num="7"/>
+<Ref_Hyp num="6"/>
+<Ref_Hyp num="5"/>
+</Nary_Pred>
+<Exp_Comparison goalTag="Invariant is preserved" op=":" initialTag="((nextIndex) : (((1) .. (100))))">
+<Attr>
+<Pos s="1" c="15" l="43"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:2:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:1,/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:2:1:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="9" c="9" l="119"/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessConstraints</Tag>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessProperties</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Hypothesis/>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessInvariant</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Local_Hyp num="1">
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+<Binary_Pred op="=>">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="6" l="54"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+<Binary_Pred op="=>">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="55"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="9" l="55"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="55"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+<Binary_Pred op="=>">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="56"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="9" l="56"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="56"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+<Binary_Pred op="=>">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="6" l="59"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="59"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Unary_Pred op="not">
+<Exp_Comparison op="=">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="59"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<EmptySet/>
+</Exp_Comparison>
+</Unary_Pred>
+<Exp_Comparison op=":">
+<Binary_Exp op="/\">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="59"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Binary_Exp op="-">
+<Id value="INTEGER"/>
+<Id value="NATURAL"/>
+</Binary_Exp>
+</Binary_Exp>
+<Unary_Exp op="FIN">
+<Id value="INTEGER"/>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+<Binary_Pred op="=>">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="6" l="60"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="60"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Unary_Pred op="not">
+<Exp_Comparison op="=">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="60"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<EmptySet/>
+</Exp_Comparison>
+</Unary_Pred>
+<Exp_Comparison op=":">
+<Binary_Exp op="/\">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="60"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value="NATURAL"/>
+</Binary_Exp>
+<Unary_Exp op="FIN">
+<Id value="NATURAL"/>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Local_Hyp>
+<Local_Hyp num="4">
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+<Binary_Pred op="=>">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="6" l="61"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="61"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;">
+<Nary_Pred op="&amp;">
+<Exp_Comparison op=":">
+<Quantified_Set>
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="47" l="61"/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="55" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="52" l="61"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="57" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="61" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Body>
+</Quantified_Set>
+<Unary_Exp op="FIN">
+<Quantified_Set>
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="47" l="61"/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="55" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="52" l="61"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="57" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="61" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Body>
+</Quantified_Set>
+</Unary_Exp>
+</Exp_Comparison>
+<Quantified_Pred type="!">
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="47" l="61"/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+<Quantified_Pred type="!">
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="47" l="61"/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op="=>">
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="55" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="52" l="61"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="57" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="61" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Nary_Pred op="&amp;"/>
+<Exp_Comparison op=":">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:3:1:2" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="76" l="61"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="70" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="70" l="61"/>
+</Attr>
+</Id>
+<Binary_Exp op="+->">
+<Unary_Exp op="dom">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="70" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Unary_Exp op="ran">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="70" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
+<Nary_Pred op="&amp;">
+<Nary_Pred op="&amp;"/>
+<Exp_Comparison op=":">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="89" l="61"/>
+</Attr>
+</Id>
+<Unary_Exp op="FIN">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="89" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+<Unary_Pred op="not">
+<Exp_Comparison op="=">
+<Unary_Exp op="card" typref="2701647786">
+<Attr>
+<Pos s="4" c="84" l="61"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:12:2:2:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="89" l="61"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value="0"/>
+</Exp_Comparison>
+</Unary_Pred>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Binary_Pred>
+</Nary_Pred>
+</Local_Hyp>
+<Local_Hyp num="5">
+<Binary_Pred op="=>" initialTag="((((isMaxComputed) = (TRUE))) => (((maxTemp) = (max(ran(temps))))))">
+<Attr>
+<Pos s="2" c="27" l="60"/>
+</Attr>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="6" l="60"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="60"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="38" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:2:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="30" l="60"/>
+</Attr>
+</Id>
+<Unary_Exp op="max" typref="2701647786">
+<Attr>
+<Pos s="3" c="40" l="60"/>
+</Attr>
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="60"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:11:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="60"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Unary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Local_Hyp>
+<Local_Hyp num="6">
+<Binary_Pred op="=>" initialTag="((((isMinComputed) = (TRUE))) => (((minTemp) = (min(ran(temps))))))">
+<Attr>
+<Pos s="2" c="27" l="59"/>
+</Attr>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="20" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="6" l="59"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:1:2" typref="2043437594" value="TRUE">
+<Attr>
+<Pos s="4" c="22" l="59"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="38" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:2:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="30" l="59"/>
+</Attr>
+</Id>
+<Unary_Exp op="min" typref="2701647786">
+<Attr>
+<Pos s="3" c="40" l="59"/>
+</Attr>
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="44" l="59"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:10:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="48" l="59"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Unary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Local_Hyp>
+<Local_Hyp num="7">
+<Binary_Pred op="=>" initialTag="((((temps) = ({}))) => (((isMinComputed) = (FALSE)) &amp; ((isMaxComputed) = (FALSE)) &amp; ((isAvgComputed) = (FALSE))))">
+<Attr>
+<Pos s="2" c="17" l="54"/>
+</Attr>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="12" l="54"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="6" l="54"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:1:2" typref="3817003670">
+<Attr>
+<Pos s="2" c="14" l="54"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+<Nary_Pred op="&amp;">
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="55"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="9" l="55"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:1:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="55"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="56"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="9" l="56"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:2:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="56"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+<Exp_Comparison op="=">
+<Attr>
+<Pos s="1" c="23" l="57"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="9" l="57"/>
+</Attr>
+</Id>
+<Boolean_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:9:2:3:2" typref="2043437594" value="FALSE">
+<Attr>
+<Pos s="5" c="25" l="57"/>
+</Attr>
+</Boolean_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Binary_Pred>
+</Local_Hyp>
+<Local_Hyp num="8">
+<Exp_Comparison op=":" initialTag="((isAvgComputed) : (BOOL))">
+<Attr>
+<Pos s="1" c="19" l="51"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:8:1" typref="2043437594" value="isAvgComputed">
+<Attr>
+<Pos s="13" c="5" l="51"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:8:2" typref="4282494527" value="BOOL">
+<Attr>
+<Pos s="4" c="21" l="51"/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="9">
+<Exp_Comparison op=":" initialTag="((isMaxComputed) : (BOOL))">
+<Attr>
+<Pos s="1" c="19" l="50"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:7:1" typref="2043437594" value="isMaxComputed">
+<Attr>
+<Pos s="13" c="5" l="50"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:7:2" typref="4282494527" value="BOOL">
+<Attr>
+<Pos s="4" c="21" l="50"/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="10">
+<Exp_Comparison op=":" initialTag="((isMinComputed) : (BOOL))">
+<Attr>
+<Pos s="1" c="19" l="49"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:6:1" typref="2043437594" value="isMinComputed">
+<Attr>
+<Pos s="13" c="5" l="49"/>
+</Attr>
+</Id>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:6:2" typref="4282494527" value="BOOL">
+<Attr>
+<Pos s="4" c="21" l="49"/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="11">
+<Exp_Comparison op=":" initialTag="((avgTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="47"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:1" typref="2701647786" value="avgTemp">
+<Attr>
+<Pos s="7" c="5" l="47"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:5:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="47"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="12">
+<Exp_Comparison op=":" initialTag="((maxTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="46"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="5" l="46"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:4:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="46"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="13">
+<Exp_Comparison op=":" initialTag="((minTemp) : (((-50) .. (120))))">
+<Attr>
+<Pos s="1" c="13" l="45"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="5" l="45"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:3:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="15" l="45"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="14">
+<Exp_Comparison op=":" initialTag="((nextIndex) : (((1) .. (100))))">
+<Attr>
+<Pos s="1" c="15" l="43"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:1" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="5" l="43"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:2:2:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="17" l="43"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="15">
+<Exp_Comparison op=":" initialTag="((temps) : (((((1) .. (100))) +-> (((-50) .. (120))))))">
+<Attr>
+<Pos s="1" c="11" l="42"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="5" l="42"/>
+</Attr>
+</Id>
+<Binary_Exp op="+->" typref="3083833907">
+<Attr>
+<Pos s="3" c="23" l="42"/>
+</Attr>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="13" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:2:1:1:2:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="27" l="42"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessInitialisation</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Local_Hyp num="1">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:1:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="5" l="67"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="16" l="67"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="16" l="67"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:3:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="16" l="67"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:1:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="5" l="68"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="16" l="68"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="16" l="68"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:4:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="16" l="68"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:1:1" typref="2701647786" value="avgTemp">
+<Attr>
+<Pos s="7" c="5" l="69"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="16" l="69"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="16" l="69"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:3:1:5:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="16" l="69"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_Precondition_addTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Local_Hyp num="1">
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="17" l="79"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:1" typref="2701647786" value="newTemp">
+<Attr>
+<Pos s="7" c="9" l="79"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Ref_Hyp num="1"/>
+<Exp_Comparison op=">=">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:1:1" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="10" l="80"/>
+</Attr>
+</Id>
+<Integer_Literal value="0"/>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Ref_Hyp num="1"/>
+<Exp_Comparison op=">=">
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="14" c="24" l="80"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value="1"/>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_addTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Nary_Pred op="&amp;">
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="17" l="79"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:1" typref="2701647786" value="newTemp">
+<Attr>
+<Pos s="7" c="9" l="79"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:2:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:1:2:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="19" l="79"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="44" l="80"/>
+</Attr>
+<Binary_Exp op="+" typref="2701647786">
+<Attr>
+<Pos s="1" c="40" l="80"/>
+</Attr>
+<Binary_Exp op="mod" typref="2701647786">
+<Attr>
+<Pos s="3" c="20" l="80"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:1:1" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="10" l="80"/>
+</Attr>
+</Id>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="14" c="24" l="80"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:1:2" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="42" l="80"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="25" l="27" expanded="yes"/>
+<Pos s="9" c="46" l="80"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:2:1" typref="2701647786" value="1">
+<Attr>
+<Pos s="1" c="16" l="26" expanded="yes"/>
+<Pos s="9" c="46" l="80"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:2:1:2:2:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="9" c="46" l="80"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Hypothesis>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Exp_Comparison op=">=">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:1:2:1:1:1" typref="2701647786" value="nextIndex">
+<Attr>
+<Pos s="9" c="23" l="82"/>
+</Attr>
+</Id>
+<Integer_Literal value="0"/>
+</Exp_Comparison>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+<iapa>
+<status value="Unproved"/>
+</iapa>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Exp_Comparison op=">=">
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:1:3:1:1:2:1:1:2" typref="2701647786" value="100">
+<Attr>
+<Pos s="3" c="23" l="25" expanded="yes"/>
+<Pos s="14" c="37" l="82"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value="1"/>
+</Exp_Comparison>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_Precondition_getMinTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_getMinTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Exp_Comparison op="/=">
+<Attr>
+<Pos s="2" c="15" l="91"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="91"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:2:1:2" typref="103245008">
+<Attr>
+<Pos s="2" c="18" l="91"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Hypothesis>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Unary_Pred op="not">
+<Exp_Comparison op="=">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="24" l="94"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:2:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="28" l="94"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<EmptySet/>
+</Exp_Comparison>
+</Unary_Pred>
+</Goal>
+<Proof_State proofState="Proved(1)" passList="Force(1),(?; 0)" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Exp_Comparison op=":">
+<Binary_Exp op="/\">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="24" l="94"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:2:3:1:2:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="28" l="94"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Binary_Exp op="-">
+<Id value="INTEGER"/>
+<Id value="NATURAL"/>
+</Binary_Exp>
+</Binary_Exp>
+<Unary_Exp op="FIN">
+<Id value="INTEGER"/>
+</Unary_Exp>
+</Exp_Comparison>
+</Goal>
+<Proof_State proofState="Proved(2)" passList="Force(2),(?; 0; 1)" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_Precondition_getMaxTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_getMaxTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Exp_Comparison op="/=">
+<Attr>
+<Pos s="2" c="15" l="100"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="100"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:2:1:2" typref="103245008">
+<Attr>
+<Pos s="2" c="18" l="100"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Hypothesis>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Unary_Pred op="not">
+<Exp_Comparison op="=">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="24" l="103"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:2:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="28" l="103"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<EmptySet/>
+</Exp_Comparison>
+</Unary_Pred>
+</Goal>
+<Proof_State proofState="Proved(1)" passList="Force(1),(?; 0)" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Exp_Comparison op=":">
+<Binary_Exp op="/\">
+<Unary_Exp op="ran" typref="3603043417">
+<Attr>
+<Pos s="3" c="24" l="103"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:3:3:1:2:2:1:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="28" l="103"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value="NATURAL"/>
+</Binary_Exp>
+<Unary_Exp op="FIN">
+<Id value="NATURAL"/>
+</Unary_Exp>
+</Exp_Comparison>
+</Goal>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0; 1; 2; 3)" methodList="?"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_Precondition_getAvgTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_getAvgTemp</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis>
+<Exp_Comparison op="/=">
+<Attr>
+<Pos s="2" c="15" l="109"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:2:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="9" l="109"/>
+</Attr>
+</Id>
+<EmptySet tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:2:1:2" typref="103245008">
+<Attr>
+<Pos s="2" c="18" l="109"/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+</Hypothesis>
+<Local_Hyp num="1">
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="34" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="31" l="112"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="36" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="40" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="30" l="113"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:3:2:1:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="27" l="113"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="32" l="113"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:3:2:1:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="36" l="113"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Exp_Comparison op=":">
+<Quantified_Set>
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="26" l="112"/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="34" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="31" l="112"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="36" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="40" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Body>
+</Quantified_Set>
+<Unary_Exp op="FIN">
+<Quantified_Set>
+<Variables>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="26" l="112"/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Exp_Comparison op=":">
+<Attr>
+<Pos s="1" c="34" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:1" typref="2701647786" value="xx">
+<Attr>
+<Pos s="2" c="31" l="112"/>
+</Attr>
+</Id>
+<Unary_Exp op="dom" typref="3603043417">
+<Attr>
+<Pos s="3" c="36" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="40" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Body>
+</Quantified_Set>
+</Unary_Exp>
+</Exp_Comparison>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Binary_Pred op="=>">
+<Ref_Hyp num="1"/>
+<Exp_Comparison op=":">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="50" l="112"/>
+</Attr>
+</Id>
+<Binary_Exp op="+->">
+<Unary_Exp op="dom">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="50" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Unary_Exp op="ran">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:1:3:1:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="50" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Goal>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Exp_Comparison op=":">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="69" l="112"/>
+</Attr>
+</Id>
+<Unary_Exp op="FIN">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="69" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Goal>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0; 1; 2; 3)" methodList="?"/>
+</Simple_Goal>
+<Simple_Goal>
+<Tag>Well definedness</Tag>
+<Goal>
+<Unary_Pred op="not">
+<Exp_Comparison op="=">
+<Unary_Exp op="card" typref="2701647786">
+<Attr>
+<Pos s="4" c="64" l="112"/>
+</Attr>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:4:3:1:2:2:1:2:1" typref="103245008" value="temps">
+<Attr>
+<Pos s="5" c="69" l="112"/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value="0"/>
+</Exp_Comparison>
+</Unary_Pred>
+</Goal>
+<Proof_State proofState="Proved(1)" passList="Force(1),(?; 0)" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_Precondition_init</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+</Proof_Obligation>
+<Proof_Obligation>
+<Comment>Operations dans une machine abstraite</Comment>
+<Tag>WellDefinedness_init</Tag>
+<Tag>INVARIANT</Tag>
+<Definition name="B definitions"/>
+<Definition name="ctx"/>
+<Definition name="cst"/>
+<Definition name="lprp"/>
+<Definition name="inprp"/>
+<Definition name="inext"/>
+<Definition name="seext"/>
+<Definition name="inv"/>
+<Definition name="ass"/>
+<Hypothesis/>
+<Local_Hyp num="1">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:1:1" typref="2701647786" value="minTemp">
+<Attr>
+<Pos s="7" c="9" l="121"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="20" l="121"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="20" l="121"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:3:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="20" l="121"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="2">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:1:1" typref="2701647786" value="maxTemp">
+<Attr>
+<Pos s="7" c="9" l="122"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="20" l="122"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="20" l="122"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:4:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="20" l="122"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+<Local_Hyp num="3">
+<Exp_Comparison op=":">
+<Id suffix="1" tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:1:1" typref="2701647786" value="avgTemp">
+<Attr>
+<Pos s="7" c="9" l="123"/>
+</Attr>
+</Id>
+<Binary_Exp op=".." typref="3603043417">
+<Attr>
+<Pos s="2" c="30" l="24" expanded="yes"/>
+<Pos s="4" c="20" l="123"/>
+</Attr>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:2:1:1" typref="2701647786" value="-50">
+<Attr>
+<Pos s="2" c="27" l="22" expanded="yes"/>
+<Pos s="4" c="20" l="123"/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:4:5:1:1:5:2:1:2" typref="2701647786" value="120">
+<Attr>
+<Pos s="3" c="26" l="23" expanded="yes"/>
+<Pos s="4" c="20" l="123"/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+</Local_Hyp>
+</Proof_Obligation>
+<TypeInfos>
+<Type id="103245008">
+<Unary_Exp op="POW">
+<Binary_Exp op="*">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:1:1:1:1" value="INTEGER"/>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:1:1:1:2" value="INTEGER"/>
+</Binary_Exp>
+</Unary_Exp>
+</Type>
+<Type id="2701647786">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:2:1" value="INTEGER"/>
+</Type>
+<Type id="2043437594">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:3:1" value="BOOL"/>
+</Type>
+<Type id="3083833907">
+<Unary_Exp op="POW">
+<Unary_Exp op="POW">
+<Binary_Exp op="*">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:4:1:1:1:1" value="INTEGER"/>
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:4:1:1:1:2" value="INTEGER"/>
+</Binary_Exp>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id="3603043417">
+<Unary_Exp op="POW">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:5:1:1" value="INTEGER"/>
+</Unary_Exp>
+</Type>
+<Type id="4282494527">
+<Unary_Exp op="POW">
+<Id tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:6:1:1" value="BOOL"/>
+</Unary_Exp>
+</Type>
+<Type id="3817003670">
+<Unary_Exp op="POW">
+<Generic_Type tag="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/thermostat.bxml:1:5:7:1:1"/>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+</Proof_Obligations>

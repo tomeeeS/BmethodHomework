@@ -78,8 +78,7 @@ OPERATIONS
     
     addTemp(newTemp) = 
     PRE
-        newTemp : TEMP &
-        (nextIndex mod TEMPS_CAPACITY) + 1 : DOM_TEMPS
+        newTemp : TEMP
     THEN
         nextIndex := (nextIndex mod TEMPS_CAPACITY) + 1 || // <mod TEMPS_CAPACITY>: az index ahova a következő mérési értéket beszúrjuk maradjon az értelmezési tartományban.
         temps(nextIndex) := newTemp ||
@@ -88,7 +87,7 @@ OPERATIONS
         isAvgComputed := FALSE
     END;
     
-    ret <-- getMinTemp =
+    ret <-- getMinTemp = // legkisebb ertek lekerese
     PRE
         temps /= {}
     THEN
@@ -97,7 +96,7 @@ OPERATIONS
         ret := min(ran(temps))
     END; 
     
-    ret <-- getMaxTemp =
+    ret <-- getMaxTemp = // legnagyobb ertek lekerese
     PRE
         temps /= {}
     THEN
@@ -106,7 +105,7 @@ OPERATIONS
         ret := max(ran(temps))
     END;
     
-    ret <-- getAvgTemp =
+    ret <-- getAvgTemp = // ertekek atlaganak lekerese
     PRE
         temps /= {}
     THEN
@@ -115,7 +114,7 @@ OPERATIONS
         ret := SIGMA(xx).(xx : dom(temps) | (temps)(xx)) / card(temps)
     END;
     
-    init =
+    init = // ha kell, ujra tudjuk inditani a gepet
     BEGIN  
         temps   := {} ||
         nextIndex := DOM_MIN ||

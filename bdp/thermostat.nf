@@ -57,7 +57,7 @@ THEORY ListInvariantX IS
   Expanded_List_Invariant(Machine(thermostat))==(btrue);
   Abstract_List_Invariant(Machine(thermostat))==(btrue);
   Context_List_Invariant(Machine(thermostat))==(btrue);
-  List_Invariant(Machine(thermostat))==(temps: 1..100 +-> -50..120 & nextIndex: 1..100 & minTemp: -50..120 & maxTemp: -50..120 & avgTemp: -50..120 & isMinComputed: BOOL & isMaxComputed: BOOL & isAvgComputed: BOOL & (temps = {} => isMinComputed = FALSE & isMaxComputed = FALSE & isAvgComputed = FALSE) & (isMinComputed = TRUE => minTemp = min(ran(temps))) & (isMaxComputed = TRUE => maxTemp = max(ran(temps))) & (isAvgComputed = TRUE => avgTemp = SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps)))
+  List_Invariant(Machine(thermostat))==(temps: 1..TEMPS_CAPACITY +-> -50..120 & nextIndex: 1..TEMPS_CAPACITY & minTemp: -50..120 & maxTemp: -50..120 & avgTemp: -50..120 & isMinComputed: BOOL & isMaxComputed: BOOL & isAvgComputed: BOOL & (temps = {} => isMinComputed = FALSE & isMaxComputed = FALSE & isAvgComputed = FALSE) & (isMinComputed = TRUE => minTemp = min(ran(temps))) & (isMaxComputed = TRUE => maxTemp = max(ran(temps))) & (isAvgComputed = TRUE => avgTemp = SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps)))
 END
 &
 THEORY ListAssertionsX IS
@@ -124,7 +124,7 @@ END
 THEORY ListOperationGuardX END
 &
 THEORY ListPreconditionX IS
-  List_Precondition(Machine(thermostat),addTemp)==(newTemp: -50..120 & nextIndex mod 100+1: 1..100);
+  List_Precondition(Machine(thermostat),addTemp)==(newTemp: -50..120);
   List_Precondition(Machine(thermostat),getMinTemp)==(temps/={});
   List_Precondition(Machine(thermostat),getMaxTemp)==(temps/={});
   List_Precondition(Machine(thermostat),getAvgTemp)==(temps/={});
@@ -136,8 +136,8 @@ THEORY ListSubstitutionX IS
   Expanded_List_Substitution(Machine(thermostat),getAvgTemp)==(temps/={} | isAvgComputed,avgTemp,ret:=TRUE,SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps),SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps));
   Expanded_List_Substitution(Machine(thermostat),getMaxTemp)==(temps/={} | isMaxComputed,maxTemp,ret:=TRUE,max(ran(temps)),max(ran(temps)));
   Expanded_List_Substitution(Machine(thermostat),getMinTemp)==(temps/={} | isMinComputed,minTemp,ret:=TRUE,min(ran(temps)),min(ran(temps)));
-  Expanded_List_Substitution(Machine(thermostat),addTemp)==(newTemp: -50..120 & nextIndex mod 100+1: 1..100 | nextIndex,temps,isMinComputed,isMaxComputed,isAvgComputed:=nextIndex mod 100+1,temps<+{nextIndex|->newTemp},FALSE,FALSE,FALSE);
-  List_Substitution(Machine(thermostat),addTemp)==(nextIndex:=nextIndex mod 100+1 || temps(nextIndex):=newTemp || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE);
+  Expanded_List_Substitution(Machine(thermostat),addTemp)==(newTemp: -50..120 | nextIndex,temps,isMinComputed,isMaxComputed,isAvgComputed:=nextIndex mod TEMPS_CAPACITY+1,temps<+{nextIndex|->newTemp},FALSE,FALSE,FALSE);
+  List_Substitution(Machine(thermostat),addTemp)==(nextIndex:=nextIndex mod TEMPS_CAPACITY+1 || temps(nextIndex):=newTemp || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE);
   List_Substitution(Machine(thermostat),getMinTemp)==(isMinComputed:=TRUE || minTemp:=min(ran(temps)) || ret:=min(ran(temps)));
   List_Substitution(Machine(thermostat),getMaxTemp)==(isMaxComputed:=TRUE || maxTemp:=max(ran(temps)) || ret:=max(ran(temps)));
   List_Substitution(Machine(thermostat),getAvgTemp)==(isAvgComputed:=TRUE || avgTemp:=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps) || ret:=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps));
@@ -145,9 +145,9 @@ THEORY ListSubstitutionX IS
 END
 &
 THEORY ListConstantsX IS
-  List_Valuable_Constants(Machine(thermostat))==(?);
+  List_Valuable_Constants(Machine(thermostat))==(TEMPS_CAPACITY);
   Inherited_List_Constants(Machine(thermostat))==(?);
-  List_Constants(Machine(thermostat))==(?)
+  List_Constants(Machine(thermostat))==(TEMPS_CAPACITY)
 END
 &
 THEORY ListSetsX IS
@@ -174,7 +174,7 @@ THEORY ListPropertiesX IS
   Abstract_List_Properties(Machine(thermostat))==(btrue);
   Context_List_Properties(Machine(thermostat))==(btrue);
   Inherited_List_Properties(Machine(thermostat))==(btrue);
-  List_Properties(Machine(thermostat))==(btrue)
+  List_Properties(Machine(thermostat))==(TEMPS_CAPACITY: INT & TEMPS_CAPACITY = 100)
 END
 &
 THEORY ListSeenInfoX END
@@ -188,11 +188,15 @@ THEORY ListANYVarX IS
 END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(thermostat)) == (? | ? | isAvgComputed,isMaxComputed,isMinComputed,avgTemp,maxTemp,minTemp,nextIndex,temps | ? | addTemp,getMinTemp,getMaxTemp,getAvgTemp,init | ? | ? | ? | thermostat);
+  List_Of_Ids(Machine(thermostat)) == (TEMPS_CAPACITY | ? | isAvgComputed,isMaxComputed,isMinComputed,avgTemp,maxTemp,minTemp,nextIndex,temps | ? | addTemp,getMinTemp,getMaxTemp,getAvgTemp,init | ? | ? | ? | thermostat);
   List_Of_HiddenCst_Ids(Machine(thermostat)) == (? | ?);
-  List_Of_VisibleCst_Ids(Machine(thermostat)) == (?);
+  List_Of_VisibleCst_Ids(Machine(thermostat)) == (TEMPS_CAPACITY);
   List_Of_VisibleVar_Ids(Machine(thermostat)) == (? | ?);
   List_Of_Ids_SeenBNU(Machine(thermostat)) == (?: ?)
+END
+&
+THEORY ConstantsEnvX IS
+  Constants(Machine(thermostat)) == (Type(TEMPS_CAPACITY) == Cst(btype(INTEGER,?,?)))
 END
 &
 THEORY VariablesEnvX IS

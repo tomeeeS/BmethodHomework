@@ -1,12 +1,11 @@
 ﻿THEORY BalanceX IS
-  thermostat,29,0,0,22,3,1,0;
+  thermostat,28,2,0,20,3,1,0;
   Initialisation,2,0,0,2,0,0,0;
-  WellDefinedness_Precondition_addTemp,2,0,0,2,0,0,0;
   WellDefinedness_addTemp,2,0,0,2,0,0,0;
   WellDefinedness_getAvgTemp,4,0,0,2,1,0,0;
-  WellDefinedness_getMaxTemp,2,0,0,0,1,0,0;
+  WellDefinedness_getMaxTemp,2,1,0,0,1,0,0;
   WellDefinedness_getMinTemp,2,0,0,0,1,1,0;
-  addTemp,1,0,0,1,0,0,0;
+  addTemp,2,1,0,1,0,0,0;
   getAvgTemp,4,0,0,3,0,0,0;
   getMaxTemp,4,0,0,4,0,0,0;
   getMinTemp,4,0,0,4,0,0,0;
@@ -18,7 +17,7 @@ THEORY ProofState IS
   Unproved;
   Proved(0);
   Proved(0);
-  Unproved;
+  Proved(Util);
   Proved(1);
   Proved(2);
   Proved(1);
@@ -29,8 +28,6 @@ THEORY ProofState IS
   Proved(0);
   Proved(0);
   Proved(0);
-  Proved(0);
-  Proved(0);
   Unproved;
   Proved(0);
   Proved(0);
@@ -40,6 +37,7 @@ THEORY ProofState IS
   Proved(0);
   Proved(0);
   Proved(0);
+  Proved(Util);
   Proved(0);
   Proved(0);
   Proved(0)
@@ -50,6 +48,17 @@ THEORY MethodList IS
   ?;
   pr;
   pr;
+  dd & ah(ran(temps)/\NATURAL <: NATURAL) & ar(InPOWLeavesXY.7,Once) & ah(ran(temps): FIN(-50..120)) & pr & ah(ran(temps) <: -50..120) & pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
   ?;
   pr;
   pr;
@@ -59,19 +68,7 @@ THEORY MethodList IS
   pr;
   pr;
   pr;
-  pr;
-  pr;
-  pr;
-  pr;
-  ?;
-  pr;
-  pr;
-  pr;
-  pr;
-  pr;
-  pr;
-  pr;
-  pr;
+  pr & ar(b1.59,Once) & ar(b1.60,Once);
   pr;
   pr;
   pr
@@ -79,10 +76,10 @@ END
 &
 THEORY PassList IS
   Force(1),(?;0);
-  Force(0),(?;0;1;2;3);
+  Force(0),(?;0;1;2);
   Force(0),?;
   Force(0),?;
-  Force(0),(?;0;1;2;3);
+  Force(2),(?;0;1;2);
   Force(1),(?;0);
   Force(2),(?;0;1);
   Force(1),(?;0);
@@ -93,9 +90,7 @@ THEORY PassList IS
   Force(0),?;
   Force(0),?;
   Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),(?;0;1;2;3);
+  Force(0),(?;0;1;2);
   Force(0),?;
   Force(0),?;
   Force(0),?;
@@ -104,6 +99,7 @@ THEORY PassList IS
   Force(0),?;
   Force(0),?;
   Force(0),?;
+  Force(0),(?;0;1;2);
   Force(0),?;
   Force(0),?;
   Force(0),?

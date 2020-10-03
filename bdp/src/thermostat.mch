@@ -1,19 +1,16 @@
 ﻿/* 
-Egy termosztát szoftverének a specifikációját kell elkészíteni, amelynek az alábbi követelményeket kell
-megvalósítania:
-• 100 db mérési eredményt legyen képes eltárolni,
-• a mért eredmények megadásához rendelkezzen egy művelettel,
-• a géptől le lehessen kérdezni, hogy a megadott értékek között mi a maximális és minimális érték,
-valamint le lehessen kérdezni az értékek átlagát is,
-• az adatok folyamatosan érkeznek, a 101. adat érkezésekor a gép felejtse el a legrégebben megadott
+Egy termosztat szoftverenek a specifikaciojat kell elkesziteni, amelynek az alabbi kovetelmenyeket kell
+megvalositania:
+• 100 db meresi eredmenyt legyen kepes eltarolni,
+• a mert eredmenyek megadasahoz rendelkezzen egy muvelettel,
+• a geptol le lehessen kerdezni, hogy a megadott ertekek kozott mi a maximalis es minimalis ertek,
+valamint le lehessen kerdezni az ertekek atlagat is,
+• az adatok folyamatosan erkeznek, a 101. adat erkezesekor a gep felejtse el a legregebben megadott
 adatot.
-Az eltárolható mérési eredmények száma egy konstanssal legyen definiálva. Az adatokat egyesével lehessen
+Az eltarolhato meresi eredmenyek szama egy konstanssal legyen definialva. Az adatokat egyesevel lehessen
 beolvasni.
 
-
-
-Megoldás összefoglaló:
-Mérési eredmények (hőmérsékletek) hozzáadása (addTemp hívások) után az eddig kiszámolt min, max és átlag (avg) mérési értékek érvénytelenek lesznek. Le kell őket kérni ismét, ekkor lesznek kiszámolva az eddigi összes hőmérsékletre. Az addTemp művelet csak egy-egy mérés eltárolására szolgál.
+"-50 és 120 fokcelzius kozotti ertekeket kaphat a vezerlo"
  */
 MACHINE
     thermostat
@@ -25,6 +22,14 @@ MACHINE
 
 
 
+
+                                                                  // átlagszámítás, egész-osztással
+
+CONCRETE_CONSTANTS
+    TEMPS_CAPACITY // ennyi erteket tudunk eltarolni
+
+PROPERTIES
+    TEMPS_CAPACITY : INT & TEMPS_CAPACITY = 100
 
 ABSTRACT_VARIABLES
     temps ,  // a méréseket tároló parciális függvény
@@ -39,8 +44,8 @@ ABSTRACT_VARIABLES
     isAvgComputed  // ki van-e épp számolva a avgTemp érték (invariánshoz kell)
 
 INVARIANT
-    temps : 1 .. 100  +-> - 50 .. 120 & // TEMP értékű parciális függvényben tároljuk a méréseket
-    nextIndex : 1 .. 100  &
+    temps : 1 .. TEMPS_CAPACITY +-> - 50 .. 120 & // TEMP értékű parciális függvényben tároljuk a méréseket
+    nextIndex : 1 .. TEMPS_CAPACITY &
 
     minTemp : - 50 .. 120 &
     maxTemp : - 50 .. 120 &
@@ -58,7 +63,7 @@ INVARIANT
     ) &
     ( isMinComputed = TRUE => minTemp = min ( ran ( temps ) ) ) &
     ( isMaxComputed = TRUE => maxTemp = max ( ran ( temps ) ) ) &
-    ( isAvgComputed = TRUE => avgTemp = ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) ) / card ( temps ) )
+    ( isAvgComputed = TRUE => avgTemp = SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) )
 
 INITIALISATION
     temps   := {} ||
@@ -76,44 +81,43 @@ OPERATIONS
 
     addTemp ( newTemp ) =
     PRE
-        newTemp : - 50 .. 120 &
-        ( nextIndex mod 100          ) + 1 : 1 .. 100
+        newTemp : - 50 .. 120
     THEN
-        nextIndex := ( nextIndex mod 100          ) + 1 || // <mod TEMPS_CAPACITY>: az index ahova a következő mérési értéket beszúrjuk maradjon az értelmezési tartományban.
+        nextIndex := ( nextIndex mod TEMPS_CAPACITY ) + 1 || // <mod TEMPS_CAPACITY>: az index ahova a következő mérési értéket beszúrjuk maradjon az értelmezési tartományban.
         temps ( nextIndex ) := newTemp ||
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||
         isAvgComputed := FALSE
     END ;
 
-    ret <-- getMinTemp =
+    ret <-- getMinTemp = // legkisebb ertek lekerese
     PRE
         temps /= {}
     THEN
         isMinComputed := TRUE ||
         minTemp := min ( ran ( temps ) ) ||
-        ret := min ( ran ( temps ) )
+        ret     := min ( ran ( temps ) )
     END ;
 
-    ret <-- getMaxTemp =
+    ret <-- getMaxTemp = // legnagyobb ertek lekerese
     PRE
         temps /= {}
     THEN
         isMaxComputed := TRUE ||
         maxTemp := max ( ran ( temps ) ) ||
-        ret := max ( ran ( temps ) )
+        ret     := max ( ran ( temps ) )
     END ;
 
-    ret <-- getAvgTemp =
+    ret <-- getAvgTemp = // ertekek atlaganak lekerese
     PRE
         temps /= {}
     THEN
         isAvgComputed := TRUE ||
-        avgTemp := SIGMA ( xx ) . ( xx : dom ( temps ) | ( temps ) ( xx ) ) / card ( temps ) || // átlagszámítás, egész-osztással
-        ret := SIGMA ( xx ) . ( xx : dom ( temps ) | ( temps ) ( xx ) ) / card ( temps )
+        avgTemp := SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) ||
+        ret     := SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps )
     END ;
 
-    init =
+    init = // ha kell, ujra tudjuk inditani a gepet
     BEGIN
         temps   := {} ||
         nextIndex := 1       ||

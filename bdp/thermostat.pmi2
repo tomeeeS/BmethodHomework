@@ -1,13 +1,31 @@
 ﻿THEORY BalanceX IS
-  thermostat,20,1,0,17,1,0,0;
-  Initialisation,5,0,0,5,0,0,0;
-  WellDefinedness_addTemp,8,0,0,6,1,0,0;
+  thermostat,28,2,0,20,3,1,0;
+  Initialisation,2,0,0,2,0,0,0;
+  WellDefinedness_addTemp,2,0,0,2,0,0,0;
+  WellDefinedness_getAvgTemp,4,0,0,2,1,0,0;
+  WellDefinedness_getMaxTemp,2,1,0,0,1,0,0;
+  WellDefinedness_getMinTemp,2,0,0,0,1,1,0;
   addTemp,2,1,0,1,0,0,0;
-  init,5,0,0,5,0,0,0
+  getAvgTemp,4,0,0,3,0,0,0;
+  getMaxTemp,4,0,0,4,0,0,0;
+  getMinTemp,4,0,0,4,0,0,0;
+  init,2,0,0,2,0,0,0
 END
 &
 THEORY ProofState IS
   Proved(1);
+  Unproved;
+  Proved(0);
+  Proved(0);
+  Proved(Util);
+  Proved(1);
+  Proved(2);
+  Proved(1);
+  Proved(0);
+  Proved(0);
+  Proved(0);
+  Proved(0);
+  Proved(0);
   Proved(0);
   Proved(0);
   Unproved;
@@ -19,11 +37,7 @@ THEORY ProofState IS
   Proved(0);
   Proved(0);
   Proved(0);
-  Proved(0);
   Proved(Util);
-  Proved(0);
-  Proved(0);
-  Proved(0);
   Proved(0);
   Proved(0);
   Proved(0)
@@ -31,10 +45,21 @@ END
 &
 THEORY MethodList IS
   pr;
+  ?;
   pr;
   pr;
-  dd & ah(ran(temps<+{nextIndex|->newTemp}): FIN(TEMP)) & ah(dom(temps<+{nextIndex|->newTemp}): FIN(NAT)) & pr & pr;
+  dd & ah(ran(temps)/\NATURAL <: NATURAL) & ar(InPOWLeavesXY.7,Once) & ah(ran(temps): FIN(-50..120)) & pr & ah(ran(temps) <: -50..120) & pr;
   pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  pr;
+  dd & pr & ah(-50<=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps))) & ah((-50)*card(temps)<=SIGMA(xx).(xx: dom(temps) | temps(xx))) & ah(dom(temps) = 1..card(temps)) & pr & pr & ah(1<=min(dom(temps))) & pr;
   pr;
   pr;
   pr;
@@ -46,30 +71,35 @@ THEORY MethodList IS
   pr & ar(b1.59,Once) & ar(b1.60,Once);
   pr;
   pr;
-  pr;
-  pr;
-  pr;
   pr
 END
 &
 THEORY PassList IS
   Force(1),(?;0);
+  Force(0),(?;0;1;2;3);
   Force(0),?;
   Force(0),?;
-  Force(0),(?;0;1);
-  Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),?;
-  Force(0),(?;0;1);
+  Force(2),(?;0;1;2;3);
+  Force(1),(?;0);
+  Force(2),(?;0;1);
+  Force(1),(?;0);
   Force(0),?;
   Force(0),?;
   Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),(?;0;1;2;3);
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),(?;0;1;2;3);
   Force(0),?;
   Force(0),?;
   Force(0),?

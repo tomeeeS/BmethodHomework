@@ -10,7 +10,7 @@ adatot.
 Az eltarolhato meresi eredmenyek szama egy konstanssal legyen definialva. Az adatokat egyesevel lehessen
 beolvasni.
 
-"-50 és 120 fokcelzius kozotti ertekeket kaphat a vezerlo"
+"-50 es 120 fokcelzius kozotti ertekeket kaphat a vezerlo"
  */
 MACHINE
     thermostat
@@ -21,70 +21,74 @@ MACHINE
 
 
 
-
-
-                                                                  // átlagszámítás, egész-osztással
+                                                                  // atlagszamitas, egesz-osztassal
 
 CONCRETE_CONSTANTS
     TEMPS_CAPACITY // ennyi erteket tudunk eltarolni
 
 PROPERTIES
-    TEMPS_CAPACITY : INT & TEMPS_CAPACITY = 100
+    TEMPS_CAPACITY : 100 .. 100 & TEMPS_CAPACITY = 100
 
 ABSTRACT_VARIABLES
-    temps ,  // a méréseket tároló parciális függvény
-    nextIndex , // az az értelmezési helye a temps függvénynek, ahova 
-               // a következő beolvasott mérési eredmény kerülne
-    minTemp , // a legkisebb eltárolt hőmérséklet
-    maxTemp , // a legnagyobb eltárolt hőmérséklet
-    avgTemp , // az eltárolt hőmérsékletek átlaga
+    temps ,  // a mereseket tarolo parcialis fuggveny
+    minTemp , // a legkisebb eltarolt homerseklet
+    maxTemp , // a legnagyobb eltarolt homerseklet
+    avgTemp , // az eltarolt homersekletek atlaga
 
-    isMinComputed , // ki van-e épp számolva a minTemp érték (invariánshoz kell)
-    isMaxComputed , // ki van-e épp számolva a maxTemp érték (invariánshoz kell)
-    isAvgComputed  // ki van-e épp számolva a avgTemp érték (invariánshoz kell)
+    isMinComputed , // ki van-e epp szamolva a minTemp ertek (invarianshoz kell)
+    isMaxComputed , // ki van-e epp szamolva a maxTemp ertek (invarianshoz kell)
+    isAvgComputed  // ki van-e epp szamolva a avgTemp ertek (invarianshoz kell)
 
 INVARIANT
-    temps : 1 .. TEMPS_CAPACITY +-> - 50 .. 120 & // TEMP értékű parciális függvényben tároljuk a méréseket
-    nextIndex : 1 .. TEMPS_CAPACITY &
+    temps : 1 .. TEMPS_CAPACITY +-> - 50 .. 120 & // a mereseket tarolo parcialis fuggveny
 
-    minTemp : - 50 .. 120 &
-    maxTemp : - 50 .. 120 &
-    avgTemp : - 50 .. 120 &
+    minTemp : - 50 .. 120 & // a legkisebb eltarolt homerseklet tipusa
+    maxTemp : - 50 .. 120 & // a legnagyobb eltarolt homerseklet tipusa
+    avgTemp : - 50 .. 120 & // az eltarolt homersekletek atlaganak tipusa
 
     isMinComputed : BOOL &
     isMaxComputed : BOOL &
     isAvgComputed : BOOL &
-    // változók típusainak megadásának vége
+    // valtozok tipusainak megadasanak vege
 
-    ( temps = {} =>
-        isMinComputed = FALSE &
-        isMaxComputed = FALSE &
-        isAvgComputed = FALSE
+    ( temps = {} => // amikor nincs meres
+        isMinComputed = FALSE & // nincs kiszamolva a min
+        isMaxComputed = FALSE & // nincs kiszamolva a max
+        isAvgComputed = FALSE   // nincs kiszamolva az atlag (avg)
     ) &
+    // ha ki vannak szamolva, akkor a megfelelo valtozoban helyes ertek van
     ( isMinComputed = TRUE => minTemp = min ( ran ( temps ) ) ) &
     ( isMaxComputed = TRUE => maxTemp = max ( ran ( temps ) ) ) &
     ( isAvgComputed = TRUE => avgTemp = SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) )
 
 INITIALISATION
-    temps   := {} ||
-    nextIndex := 1       ||
+    temps   := {} || // ures a fuggveny kezdetben
 
-    minTemp :: - 50 .. 120 ||
-    maxTemp :: - 50 .. 120 ||
-    avgTemp :: - 50 .. 120 ||
+    minTemp :: - 50 .. 120 || // tetszoleges homerseklet lehet
+    maxTemp :: - 50 .. 120 || // tetszoleges homerseklet lehet
+    avgTemp :: - 50 .. 120 || // tetszoleges homerseklet lehet
 
-    isMinComputed := FALSE ||
-    isMaxComputed := FALSE ||
-    isAvgComputed := FALSE
+    isMinComputed := FALSE || // kezdetben nincs kiszamitva a minTemp
+    isMaxComputed := FALSE || // kezdetben nincs kiszamitva a maxTemp
+    isAvgComputed := FALSE    // kezdetben nincs kiszamitva az avgTemp
 
 OPERATIONS
 
+    // a kovetkezo homerseklet hozzaadasa, ez invalidda teszi az eddigi min, max, avg temp ertekeket.
     addTemp ( newTemp ) =
     PRE
         newTemp : - 50 .. 120
     THEN
-        nextIndex := ( nextIndex mod TEMPS_CAPACITY ) + 1 || // <mod TEMPS_CAPACITY>: az index ahova a következő mérési értéket beszúrjuk maradjon az értelmezési tartományban.
-        temps ( nextIndex ) := newTemp ||
+        ANY
+            tTemps
+        WHERE
+            tTemps : 1      .. ( TEMPS_CAPACITY + 1 ) +-> - 50 .. 120 &
+            1 : dom ( tTemps ) &
+            tTemps ( 1 ) = newTemp &
+            ! ii . ( ii : dom ( temps ) => tTemps ( ii + 1 ) = temps ( ii ) )
+        THEN
+            temps := 1 .. TEMPS_CAPACITY <| tTemps
+        END ||
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||
         isAvgComputed := FALSE
@@ -120,7 +124,6 @@ OPERATIONS
     init = // ha kell, ujra tudjuk inditani a gepet
     BEGIN
         temps   := {} ||
-        nextIndex := 1       ||
 
         minTemp :: - 50 .. 120 ||
         maxTemp :: - 50 .. 120 ||

@@ -27,12 +27,10 @@ CONSTANTS
     TEMPS_CAPACITY // ennyi erteket tudunk eltarolni
     
 PROPERTIES
-    TEMPS_CAPACITY : INT & TEMPS_CAPACITY = 100
+    TEMPS_CAPACITY : 100..100 & TEMPS_CAPACITY = 100
     
 VARIABLES
     temps,   // a mereseket tarolo parcialis fuggveny
-    nextIndex, // az az ertelmezesi helye a temps fuggvenynek, ahova 
-               // a kovetkezo beolvasott meresi eredmeny kerulne
     minTemp, // a legkisebb eltarolt homerseklet
     maxTemp, // a legnagyobb eltarolt homerseklet
     avgTemp, // az eltarolt homersekletek atlaga
@@ -43,7 +41,6 @@ VARIABLES
 
 INVARIANT
     temps : DOM_TEMPS +-> TEMP & // a mereseket tarolo parcialis fuggveny
-    nextIndex : DOM_TEMPS & // az az ertelmezesi helye a temps fuggvenynek, ahova a kovetkezo beolvasott meresi eredmeny kerulne
     
     minTemp : TEMP & // a legkisebb eltarolt homerseklet tipusa
     maxTemp : TEMP & // a legnagyobb eltarolt homerseklet tipusa
@@ -66,7 +63,6 @@ INVARIANT
     
 INITIALISATION  
     temps   := {} || // ures a fuggveny kezdetben
-    nextIndex := DOM_MIN || // az ertelmezesi tartomany elejen kezdjuk feltolteni a fuggvenyt a homersekletekkel
 
     minTemp :: TEMP || // tetszoleges homerseklet lehet
     maxTemp :: TEMP || // tetszoleges homerseklet lehet
@@ -83,8 +79,16 @@ OPERATIONS
     PRE
         newTemp : TEMP
     THEN
-        nextIndex := (nextIndex mod TEMPS_CAPACITY) + 1 || // <mod TEMPS_CAPACITY>: az index ahova a kovetkezo meresi erteket beszurjuk maradjon az ertelmezesi tartomanyban es "a 101. adat erkezesekor a gep felejtse el a legregebben megadott adatot".
-        temps(nextIndex) := newTemp ||
+        ANY
+            tTemps
+        WHERE
+            tTemps : DOM_MIN..(TEMPS_CAPACITY+1) +-> TEMP &
+            1 : dom(tTemps) &
+            tTemps(1) = newTemp &
+            !ii.(ii : dom(temps) => tTemps(ii+1) = temps(ii))
+        THEN
+            temps := DOM_TEMPS <| tTemps
+        END ||
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||
         isAvgComputed := FALSE
@@ -120,7 +124,6 @@ OPERATIONS
     init = // ha kell, ujra tudjuk inditani a gepet
     BEGIN  
         temps   := {} ||
-        nextIndex := DOM_MIN ||
     
         minTemp :: TEMP  ||
         maxTemp :: TEMP ||

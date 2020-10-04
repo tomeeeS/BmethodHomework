@@ -1,15 +1,15 @@
 THEORY BalanceX IS
-thermostat,28,2,0,20,3,1,0;
-Initialisation,2,0,0,2,0,0,0;
-WellDefinedness_addTemp,2,0,0,2,0,0,0;
+thermostat,24,1,0,17,3,1,0;
+Initialisation,1,0,0,1,0,0,0;
+WellDefinedness_addTemp,1,0,0,1,0,0,0;
 WellDefinedness_getAvgTemp,4,0,0,2,1,0,0;
 WellDefinedness_getMaxTemp,2,1,0,0,1,0,0;
 WellDefinedness_getMinTemp,2,0,0,0,1,1,0;
-addTemp,2,1,0,1,0,0,0;
+addTemp,1,0,0,1,0,0,0;
 getAvgTemp,4,0,0,3,0,0,0;
 getMaxTemp,4,0,0,4,0,0,0;
 getMinTemp,4,0,0,4,0,0,0;
-init,2,0,0,2,0,0,0
+init,1,0,0,1,0,0,0
 END
 &
 THEORY ProofState IS
@@ -26,8 +26,6 @@ Proved(0);
 Proved(0);
 Proved(0);
 Proved(0);
-Proved(0);
-Proved(0);
 Unproved;
 Proved(0);
 Proved(0);
@@ -36,8 +34,6 @@ Proved(0);
 Proved(0);
 Proved(0);
 Proved(0);
-Proved(0);
-Proved(Util);
 Proved(0);
 Proved(0);
 Proved(0)
@@ -57,10 +53,7 @@ pr;
 pr;
 pr;
 pr;
-pr;
-pr;
-dd & pr & ah( -50<=SIGMA(xx).(xx : dom(temps) | temps(xx))/card(dom(temps))) & ah( -50*card(temps)<=SIGMA(xx).(xx : dom(temps) | temps(xx))) & ah(dom(temps) = 1..card(temps)) & pr & pr & ah(1<=min(dom(temps))) & pr;
-pr;
+?;
 pr;
 pr;
 pr;
@@ -68,7 +61,6 @@ pr;
 pr;
 pr;
 pr;
-pr & ar(b1.59,Once) & ar(b1.60,Once);
 pr;
 pr;
 pr
@@ -88,8 +80,6 @@ Force(0),?;
 Force(0),?;
 Force(0),?;
 Force(0),?;
-Force(0),?;
-Force(0),?;
 Force(0),(?; 0; 1; 2; 3);
 Force(0),?;
 Force(0),?;
@@ -98,8 +88,6 @@ Force(0),?;
 Force(0),?;
 Force(0),?;
 Force(0),?;
-Force(0),?;
-Force(0),(?; 0; 1; 2; 3);
 Force(0),?;
 Force(0),?;
 Force(0),?

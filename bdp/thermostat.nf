@@ -57,14 +57,14 @@ THEORY ListInvariantX IS
   Expanded_List_Invariant(Machine(thermostat))==(btrue);
   Abstract_List_Invariant(Machine(thermostat))==(btrue);
   Context_List_Invariant(Machine(thermostat))==(btrue);
-  List_Invariant(Machine(thermostat))==(temps: 1..TEMPS_CAPACITY +-> -50..120 & card(ran(temps))<=TEMPS_CAPACITY & dom(temps) = 1..card(ran(temps)) & minTemp: -50..120 & maxTemp: -50..120 & avgTemp: -50..120 & isMinComputed: BOOL & isMaxComputed: BOOL & isAvgComputed: BOOL & (temps = {} => isMinComputed = FALSE & isMaxComputed = FALSE & isAvgComputed = FALSE) & (isMinComputed = TRUE => minTemp = min(ran(temps))) & (isMaxComputed = TRUE => maxTemp = max(ran(temps))) & (isAvgComputed = TRUE => avgTemp = SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps)))
+  List_Invariant(Machine(thermostat))==(temps: 1..TEMPS_CAPACITY +-> -50..120 & minTemp: -50..120 & maxTemp: -50..120 & avgTemp: -50..120 & isMinComputed: BOOL & isMaxComputed: BOOL & isAvgComputed: BOOL & (temps = {} => isMinComputed = FALSE & isMaxComputed = FALSE & isAvgComputed = FALSE) & (isMinComputed = TRUE => minTemp = min(ran(temps))) & (isMaxComputed = TRUE => maxTemp = max(ran(temps))) & (isAvgComputed = TRUE => avgTemp = SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps))))
 END
 &
 THEORY ListAssertionsX IS
   Expanded_List_Assertions(Machine(thermostat))==(btrue);
   Abstract_List_Assertions(Machine(thermostat))==(btrue);
   Context_List_Assertions(Machine(thermostat))==(btrue);
-  List_Assertions(Machine(thermostat))==(btrue)
+  List_Assertions(Machine(thermostat))==(dom(temps) = 1..card(dom(temps)) & temps: FIN(temps) & (temps/={} => SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps)): -50..120))
 END
 &
 THEORY ListCoverageX IS
@@ -133,14 +133,14 @@ END
 &
 THEORY ListSubstitutionX IS
   Expanded_List_Substitution(Machine(thermostat),init)==(btrue | temps:={} || @(minTemp$0).(minTemp$0: -50..120 ==> minTemp:=minTemp$0) || @(maxTemp$0).(maxTemp$0: -50..120 ==> maxTemp:=maxTemp$0) || @(avgTemp$0).(avgTemp$0: -50..120 ==> avgTemp:=avgTemp$0) || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE);
-  Expanded_List_Substitution(Machine(thermostat),getAvgTemp)==(temps/={} | isAvgComputed,avgTemp,ret:=TRUE,SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps),SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps));
+  Expanded_List_Substitution(Machine(thermostat),getAvgTemp)==(temps/={} | isAvgComputed:=TRUE || @(avgTemp$1).(avgTemp$1 = SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps)) & SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps)): -50..120 ==> avgTemp:=avgTemp$1) || ret:=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps)));
   Expanded_List_Substitution(Machine(thermostat),getMaxTemp)==(temps/={} | isMaxComputed,maxTemp,ret:=TRUE,max(ran(temps)),max(ran(temps)));
   Expanded_List_Substitution(Machine(thermostat),getMinTemp)==(temps/={} | isMinComputed,minTemp,ret:=TRUE,min(ran(temps)),min(ran(temps)));
-  Expanded_List_Substitution(Machine(thermostat),addTemp)==(newTemp: -50..120 | @(tTemps,tTemps2).(tTemps: 1..card(temps)+1 +-> -50..120 & tTemps2: 1..TEMPS_CAPACITY +-> -50..120 & 1: dom(tTemps) & tTemps(1) = newTemp & !ii.(ii: 1..card(temps) => tTemps(ii+1) = temps(ii)) & tTemps2 = 1..TEMPS_CAPACITY<|tTemps & dom(tTemps2) = 1..card(ran(tTemps2)) ==> temps:=tTemps2) || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE);
-  List_Substitution(Machine(thermostat),addTemp)==(ANY tTemps,tTemps2 WHERE tTemps: 1..card(temps)+1 +-> -50..120 & tTemps2: 1..TEMPS_CAPACITY +-> -50..120 & 1: dom(tTemps) & tTemps(1) = newTemp & !ii.(ii: 1..card(temps) => tTemps(ii+1) = temps(ii)) & tTemps2 = 1..TEMPS_CAPACITY<|tTemps & dom(tTemps2) = 1..card(ran(tTemps2)) THEN temps:=tTemps2 END || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE);
+  Expanded_List_Substitution(Machine(thermostat),addTemp)==(newTemp: -50..120 | @tTemps.(tTemps: 1..TEMPS_CAPACITY +-> -50..120 & 1: dom(tTemps) & tTemps(1) = newTemp & !ii.(ii: 2..min({card(dom(temps))+1,TEMPS_CAPACITY}) => tTemps(ii) = temps(ii-1)) & dom(tTemps) = 1..card(dom(tTemps)) & card(dom(tTemps))<=TEMPS_CAPACITY & (card(dom(temps))<TEMPS_CAPACITY => dom(tTemps) = dom(temps)\/{card(dom(temps))+1}) & (card(dom(temps)) = TEMPS_CAPACITY => dom(tTemps) = dom(temps)) ==> temps:=tTemps) || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE);
+  List_Substitution(Machine(thermostat),addTemp)==(ANY tTemps WHERE tTemps: 1..TEMPS_CAPACITY +-> -50..120 & 1: dom(tTemps) & tTemps(1) = newTemp & !ii.(ii: 2..min({card(dom(temps))+1,TEMPS_CAPACITY}) => tTemps(ii) = temps(ii-1)) & dom(tTemps) = 1..card(dom(tTemps)) & card(dom(tTemps))<=TEMPS_CAPACITY & (card(dom(temps))<TEMPS_CAPACITY => dom(tTemps) = dom(temps)\/{card(dom(temps))+1}) & (card(dom(temps)) = TEMPS_CAPACITY => dom(tTemps) = dom(temps)) THEN temps:=tTemps END || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE);
   List_Substitution(Machine(thermostat),getMinTemp)==(isMinComputed:=TRUE || minTemp:=min(ran(temps)) || ret:=min(ran(temps)));
   List_Substitution(Machine(thermostat),getMaxTemp)==(isMaxComputed:=TRUE || maxTemp:=max(ran(temps)) || ret:=max(ran(temps)));
-  List_Substitution(Machine(thermostat),getAvgTemp)==(isAvgComputed:=TRUE || avgTemp:=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps) || ret:=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps));
+  List_Substitution(Machine(thermostat),getAvgTemp)==(isAvgComputed:=TRUE || avgTemp: (avgTemp = SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps)) & SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps)): -50..120) || ret:=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps)));
   List_Substitution(Machine(thermostat),init)==(temps:={} || minTemp:: -50..120 || maxTemp:: -50..120 || avgTemp:: -50..120 || isMinComputed:=FALSE || isMaxComputed:=FALSE || isAvgComputed:=FALSE)
 END
 &
@@ -180,7 +180,7 @@ END
 THEORY ListSeenInfoX END
 &
 THEORY ListANYVarX IS
-  List_ANY_Var(Machine(thermostat),addTemp)==((Var(tTemps) == SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))),(Var(tTemps2) == SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))));
+  List_ANY_Var(Machine(thermostat),addTemp)==(Var(tTemps) == SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));
   List_ANY_Var(Machine(thermostat),getMinTemp)==(?);
   List_ANY_Var(Machine(thermostat),getMaxTemp)==(?);
   List_ANY_Var(Machine(thermostat),getAvgTemp)==(?);

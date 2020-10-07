@@ -21,7 +21,7 @@ DEFINITIONS
     TEMP == ( MIN_POSSIBLE_TEMP .. MAX_POSSIBLE_TEMP ) ;
     DOM_MIN == 1 ;
     DOM_TEMPS == ( DOM_MIN .. TEMPS_CAPACITY ) ;
-    AVG == ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) ) // atlagszamitas, egesz-osztassal
+    AVG == ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) ) // atlagszamitas, egesz-osztassal
 
 CONCRETE_CONSTANTS
     TEMPS_CAPACITY // ennyi erteket tudunk eltarolni
@@ -39,10 +39,22 @@ ABSTRACT_VARIABLES
     isMaxComputed , // ki van-e epp szamolva a maxTemp ertek (invarianshoz kell)
     isAvgComputed  // ki van-e epp szamolva a avgTemp ertek (invarianshoz kell)
 
+ASSERTIONS
+    dom ( temps ) = 1 .. ( card ( dom ( temps ) ) ) &
+    //!ii.(ii : 1..(card(dom(temps))) => ii : dom(temps)) // ekvivalens atfogalmazas
+
+    //card(dom(temps)) <= TEMPS_CAPACITY & // ezt nem tudja
+    temps : FIN ( temps ) &
+    // ran(temps : FIN(ran(temps)) ? nem segit
+
+    // avg-hez:
+    ( temps /= {} =>
+        ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) : TEMP )
+    )
+
+
 INVARIANT
     temps : DOM_TEMPS +-> TEMP & // a mereseket tarolo parcialis fuggveny
-    card ( ran ( temps ) ) <= TEMPS_CAPACITY &
-    dom ( temps ) = 1 .. ( card ( ran ( temps ) ) ) &
 
     minTemp : TEMP & // a legkisebb eltarolt homerseklet tipusa
     maxTemp : TEMP & // a legnagyobb eltarolt homerseklet tipusa
@@ -82,18 +94,23 @@ OPERATIONS
         newTemp : TEMP
     THEN
         ANY
-            tTemps , tTemps2
+            tTemps
         WHERE
-            tTemps : 1 .. ( card ( temps ) + 1 ) +-> TEMP &
-            tTemps2 : DOM_TEMPS +-> TEMP &
+            tTemps : DOM_TEMPS +-> TEMP &
 
             1 : dom ( tTemps ) &
             tTemps ( 1 ) = newTemp &
-            ! ii . ( ii : 1 .. card ( temps ) => tTemps ( ii + 1 ) = temps ( ii ) ) &
-            tTemps2 = DOM_TEMPS <| tTemps &
-            dom ( tTemps2 ) = 1 .. ( card ( ran ( tTemps2 ) ) )
+            ! ii . ( ii : 2 .. min ( { card ( dom ( temps ) ) + 1 , TEMPS_CAPACITY } ) => tTemps ( ii ) = temps ( ii - 1 ) ) &
+            dom ( tTemps ) = 1 .. ( card ( dom ( tTemps ) ) ) &
+            card ( dom ( tTemps ) ) <= TEMPS_CAPACITY &
+            ( card ( dom ( temps ) ) < TEMPS_CAPACITY =>
+                dom ( tTemps ) = dom ( temps ) \/ { card ( dom ( temps ) ) + 1 }
+            ) &
+            ( card ( dom ( temps ) ) = TEMPS_CAPACITY =>
+                dom ( tTemps ) = dom ( temps )
+            )
         THEN
-            temps := tTemps2
+            temps := tTemps
         END ||
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||
@@ -123,7 +140,10 @@ OPERATIONS
         temps /= {}
     THEN
         isAvgComputed := TRUE ||
-        avgTemp := AVG ||
+        avgTemp : (
+            avgTemp = ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) ) &
+            SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) : TEMP
+        ) ||
         ret     := AVG
     END ;
 

@@ -21,7 +21,7 @@ MACHINE
 
 
 
-                                                                   // atlagszamitas, egesz-osztassal
+                                                                        // atlagszamitas, egesz-osztassal
 
 CONCRETE_CONSTANTS
     TEMPS_CAPACITY // ennyi erteket tudunk eltarolni
@@ -39,10 +39,22 @@ ABSTRACT_VARIABLES
     isMaxComputed , // ki van-e epp szamolva a maxTemp ertek (invarianshoz kell)
     isAvgComputed  // ki van-e epp szamolva a avgTemp ertek (invarianshoz kell)
 
+ASSERTIONS
+    dom ( temps ) = 1 .. ( card ( dom ( temps ) ) ) &
+    //!ii.(ii : 1..(card(dom(temps))) => ii : dom(temps)) // ekvivalens atfogalmazas
+
+    //card(dom(temps)) <= TEMPS_CAPACITY & // ezt nem tudja
+    temps : FIN ( temps ) &
+    // ran(temps : FIN(ran(temps)) ? nem segit
+
+    // avg-hez:
+    ( temps /= {} =>
+        ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) : ( - 50 .. 120 ) )
+    )
+
+
 INVARIANT
     temps : ( 1 .. TEMPS_CAPACITY ) +-> ( - 50 .. 120 ) & // a mereseket tarolo parcialis fuggveny
-    card ( ran ( temps ) ) <= TEMPS_CAPACITY &
-    dom ( temps ) = 1 .. ( card ( ran ( temps ) ) ) &
 
     minTemp : ( - 50 .. 120 ) & // a legkisebb eltarolt homerseklet tipusa
     maxTemp : ( - 50 .. 120 ) & // a legnagyobb eltarolt homerseklet tipusa
@@ -61,7 +73,7 @@ INVARIANT
     // ha ki vannak szamolva, akkor a megfelelo valtozoban helyes ertek van
     ( isMinComputed = TRUE => minTemp = min ( ran ( temps ) ) ) &
     ( isMaxComputed = TRUE => maxTemp = max ( ran ( temps ) ) ) &
-    ( isAvgComputed = TRUE => avgTemp = ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) ) )
+    ( isAvgComputed = TRUE => avgTemp = ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) ) )
 
 INITIALISATION
     temps   := {} || // ures a fuggveny kezdetben
@@ -82,18 +94,23 @@ OPERATIONS
         newTemp : ( - 50 .. 120 )
     THEN
         ANY
-            tTemps , tTemps2
+            tTemps
         WHERE
-            tTemps : 1 .. ( card ( temps ) + 1 ) +-> ( - 50 .. 120 ) &
-            tTemps2 : ( 1 .. TEMPS_CAPACITY ) +-> ( - 50 .. 120 ) &
+            tTemps : ( 1 .. TEMPS_CAPACITY ) +-> ( - 50 .. 120 ) &
 
             1 : dom ( tTemps ) &
             tTemps ( 1 ) = newTemp &
-            ! ii . ( ii : 1 .. card ( temps ) => tTemps ( ii + 1 ) = temps ( ii ) ) &
-            tTemps2 = ( 1 .. TEMPS_CAPACITY ) <| tTemps &
-            dom ( tTemps2 ) = 1 .. ( card ( ran ( tTemps2 ) ) )
+            ! ii . ( ii : 2 .. min ( { card ( dom ( temps ) ) + 1 , TEMPS_CAPACITY } ) => tTemps ( ii ) = temps ( ii - 1 ) ) &
+            dom ( tTemps ) = 1 .. ( card ( dom ( tTemps ) ) ) &
+            card ( dom ( tTemps ) ) <= TEMPS_CAPACITY &
+            ( card ( dom ( temps ) ) < TEMPS_CAPACITY =>
+                dom ( tTemps ) = dom ( temps ) \/ { card ( dom ( temps ) ) + 1 }
+            ) &
+            ( card ( dom ( temps ) ) = TEMPS_CAPACITY =>
+                dom ( tTemps ) = dom ( temps )
+            )
         THEN
-            temps := tTemps2
+            temps := tTemps
         END ||
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||
@@ -123,8 +140,11 @@ OPERATIONS
         temps /= {}
     THEN
         isAvgComputed := TRUE ||
-        avgTemp := ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) ) ||
-        ret     := ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) )
+        avgTemp : (
+            avgTemp = ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) ) &
+            SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) : ( - 50 .. 120 )
+        ) ||
+        ret     := ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( dom ( temps ) ) )
     END ;
 
     init = // ha kell, ujra tudjuk inditani a gepet

@@ -1,9 +1,0 @@
-THEORY User_Pass IS
-Pattern(nextIndex mod TEMPS_CAPACITY+1 : 1..TEMPS_CAPACITY) 
-	& ff(0) & pr & ar(b1.59,Once) & ar(b1.60,Once);
-Pattern(ran(temps)/\NATURAL : FIN(NATURAL)) 
-	& ff(2) & dd & ah(ran(temps)/\NATURAL <: NATURAL) & ar(InPOWLeavesXY.7,Once) & ah(ran(temps) : FIN( -50..120)) & pr & ah(ran(temps) <: -50..120) & pr
-//SIGMA(xx).(xx: dom(temps) | temps(xx))/card(temps): -50..120
-    //& ff(0) & dd & pr & ah(-50<=SIGMA(xx).(xx: dom(temps) | temps(xx))/card(dom(temps))) & ah((-50)*card(temps)<=SIGMA(xx).(xx: dom(temps) | temps(xx)))
-    // b1.47
-END 

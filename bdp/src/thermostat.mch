@@ -21,7 +21,7 @@ MACHINE
 
 
 
-                                                                  // atlagszamitas, egesz-osztassal
+                                                                   // atlagszamitas, egesz-osztassal
 
 CONCRETE_CONSTANTS
     TEMPS_CAPACITY // ennyi erteket tudunk eltarolni
@@ -40,11 +40,13 @@ ABSTRACT_VARIABLES
     isAvgComputed  // ki van-e epp szamolva a avgTemp ertek (invarianshoz kell)
 
 INVARIANT
-    temps : 1 .. TEMPS_CAPACITY +-> - 50 .. 120 & // a mereseket tarolo parcialis fuggveny
+    temps : ( 1 .. TEMPS_CAPACITY ) +-> ( - 50 .. 120 ) & // a mereseket tarolo parcialis fuggveny
+    card ( ran ( temps ) ) <= TEMPS_CAPACITY &
+    dom ( temps ) = 1 .. ( card ( ran ( temps ) ) ) &
 
-    minTemp : - 50 .. 120 & // a legkisebb eltarolt homerseklet tipusa
-    maxTemp : - 50 .. 120 & // a legnagyobb eltarolt homerseklet tipusa
-    avgTemp : - 50 .. 120 & // az eltarolt homersekletek atlaganak tipusa
+    minTemp : ( - 50 .. 120 ) & // a legkisebb eltarolt homerseklet tipusa
+    maxTemp : ( - 50 .. 120 ) & // a legnagyobb eltarolt homerseklet tipusa
+    avgTemp : ( - 50 .. 120 ) & // az eltarolt homersekletek atlaganak tipusa
 
     isMinComputed : BOOL &
     isMaxComputed : BOOL &
@@ -59,14 +61,14 @@ INVARIANT
     // ha ki vannak szamolva, akkor a megfelelo valtozoban helyes ertek van
     ( isMinComputed = TRUE => minTemp = min ( ran ( temps ) ) ) &
     ( isMaxComputed = TRUE => maxTemp = max ( ran ( temps ) ) ) &
-    ( isAvgComputed = TRUE => avgTemp = SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) )
+    ( isAvgComputed = TRUE => avgTemp = ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) ) )
 
 INITIALISATION
     temps   := {} || // ures a fuggveny kezdetben
 
-    minTemp :: - 50 .. 120 || // tetszoleges homerseklet lehet
-    maxTemp :: - 50 .. 120 || // tetszoleges homerseklet lehet
-    avgTemp :: - 50 .. 120 || // tetszoleges homerseklet lehet
+    minTemp :: ( - 50 .. 120 ) || // tetszoleges homerseklet lehet
+    maxTemp :: ( - 50 .. 120 ) || // tetszoleges homerseklet lehet
+    avgTemp :: ( - 50 .. 120 ) || // tetszoleges homerseklet lehet
 
     isMinComputed := FALSE || // kezdetben nincs kiszamitva a minTemp
     isMaxComputed := FALSE || // kezdetben nincs kiszamitva a maxTemp
@@ -77,17 +79,21 @@ OPERATIONS
     // a kovetkezo homerseklet hozzaadasa, ez invalidda teszi az eddigi min, max, avg temp ertekeket.
     addTemp ( newTemp ) =
     PRE
-        newTemp : - 50 .. 120
+        newTemp : ( - 50 .. 120 )
     THEN
         ANY
-            tTemps
+            tTemps , tTemps2
         WHERE
-            tTemps : 1      .. ( TEMPS_CAPACITY + 1 ) +-> - 50 .. 120 &
+            tTemps : 1 .. ( card ( temps ) + 1 ) +-> ( - 50 .. 120 ) &
+            tTemps2 : ( 1 .. TEMPS_CAPACITY ) +-> ( - 50 .. 120 ) &
+
             1 : dom ( tTemps ) &
             tTemps ( 1 ) = newTemp &
-            ! ii . ( ii : dom ( temps ) => tTemps ( ii + 1 ) = temps ( ii ) )
+            ! ii . ( ii : 1 .. card ( temps ) => tTemps ( ii + 1 ) = temps ( ii ) ) &
+            tTemps2 = ( 1 .. TEMPS_CAPACITY ) <| tTemps &
+            dom ( tTemps2 ) = 1 .. ( card ( ran ( tTemps2 ) ) )
         THEN
-            temps := 1 .. TEMPS_CAPACITY <| tTemps
+            temps := tTemps2
         END ||
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||
@@ -117,17 +123,17 @@ OPERATIONS
         temps /= {}
     THEN
         isAvgComputed := TRUE ||
-        avgTemp := SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) ||
-        ret     := SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps )
+        avgTemp := ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) ) ||
+        ret     := ( SIGMA ( xx ) . ( xx : dom ( temps ) | temps ( xx ) ) / card ( temps ) )
     END ;
 
     init = // ha kell, ujra tudjuk inditani a gepet
     BEGIN
         temps   := {} ||
 
-        minTemp :: - 50 .. 120 ||
-        maxTemp :: - 50 .. 120 ||
-        avgTemp :: - 50 .. 120 ||
+        minTemp :: ( - 50 .. 120 ) ||
+        maxTemp :: ( - 50 .. 120 ) ||
+        avgTemp :: ( - 50 .. 120 ) ||
 
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||

@@ -3,6 +3,7 @@
     <atelierb version="3_7_ubuntu-cvs" />
     <project decomp_dir="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/expand_src" old_decomp_dir="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020/bdp/src">
         <!-- Definition directory list -->
+        <definition_dir path="/home/tomi/Desktop/cwxy37_hf_2020/src" />
         <!-- Component file list -->
         <component_file path="/home/tomi/Desktop/workspace/B/cwxy37_hf_2020" name="thermostat" suffix="mch" user="tomi">
             <component name="thermostat" type="specification" />

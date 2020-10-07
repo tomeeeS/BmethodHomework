@@ -18,10 +18,10 @@ MACHINE
 DEFINITIONS
     MIN_POSSIBLE_TEMP == -50 ;
     MAX_POSSIBLE_TEMP == 120 ;
-    TEMP == MIN_POSSIBLE_TEMP..MAX_POSSIBLE_TEMP ; // a lehetseges mert homersekleti ertekek intervalluma
+    TEMP == (MIN_POSSIBLE_TEMP..MAX_POSSIBLE_TEMP) ; // a lehetseges mert homersekleti ertekek intervalluma
     DOM_MIN == 1 ; // a mert ertekek ertelmezesi tartomanyanak minimuma
-    DOM_TEMPS == DOM_MIN..TEMPS_CAPACITY ; // a mert ertekek ertelmezesi tartomanya
-    AVG == SIGMA(xx).(xx : dom(temps) | temps(xx)) / card(temps)  // atlagszamitas, egesz-osztassal
+    DOM_TEMPS == (DOM_MIN..TEMPS_CAPACITY) ; // a mert ertekek ertelmezesi tartomanya
+    AVG == (SIGMA(xx).(xx : dom(temps) | temps(xx)) / card(temps)) // atlagszamitas, egesz-osztassal
     
 CONSTANTS
     TEMPS_CAPACITY // ennyi erteket tudunk eltarolni
@@ -41,6 +41,8 @@ VARIABLES
 
 INVARIANT
     temps : DOM_TEMPS +-> TEMP & // a mereseket tarolo parcialis fuggveny
+    card(ran(temps)) <= TEMPS_CAPACITY &
+    dom(temps) = 1..(card(ran(temps))) &
     
     minTemp : TEMP & // a legkisebb eltarolt homerseklet tipusa
     maxTemp : TEMP & // a legnagyobb eltarolt homerseklet tipusa
@@ -80,14 +82,18 @@ OPERATIONS
         newTemp : TEMP
     THEN
         ANY
-            tTemps
+            tTemps, tTemps2
         WHERE
-            tTemps : DOM_MIN..(TEMPS_CAPACITY+1) +-> TEMP &
+            tTemps : 1..(card(temps)+1) +-> TEMP &
+            tTemps2 : DOM_TEMPS +-> TEMP &
+            
             1 : dom(tTemps) &
             tTemps(1) = newTemp &
-            !ii.(ii : dom(temps) => tTemps(ii+1) = temps(ii))
+            !ii.(ii : 1..card(temps) => tTemps(ii+1) = temps(ii)) &
+            tTemps2 = DOM_TEMPS <| tTemps &
+            dom(tTemps2) = 1..(card(ran(tTemps2)))
         THEN
-            temps := DOM_TEMPS <| tTemps
+            temps := tTemps2
         END ||
         isMinComputed := FALSE ||
         isMaxComputed := FALSE ||
